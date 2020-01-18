@@ -16,7 +16,6 @@ class SignUp extends React.Component {
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password);
                 this.setState({ signUpSuccess: true });
             }
         });

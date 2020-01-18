@@ -15,7 +15,7 @@ class SignIn extends React.Component {
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                this.setState({ signInSuccess: true }, () => console.log('hi!'));
+                this.setState({ signInSuccess: true });
             }
         });
     }
