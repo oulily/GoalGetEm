@@ -1,0 +1,11 @@
+@import './common.scss';
+
+.profile-form-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: $primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
