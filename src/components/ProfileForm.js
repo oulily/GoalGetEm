@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import '../styles/ProfileForm.scss';
 
 class ProfileForm extends React.Component {
@@ -9,18 +9,34 @@ class ProfileForm extends React.Component {
     this.state = {
       image: null,
       url: '',
+      username: '',
       goal: '',
       bio: '',
       profileFormSuccess: false
     }
   }
 
-  handleChange = e => {
-    if (e.target.files[0]) {
-      const image = e.target.files[0];
-      this.setState(() => ({ image }));
-    }
-  };
+  // handleChange = e => {
+  //   if (e.target.files[0]) {
+  //     const image = e.target.files[0];
+  //     this.setState(() => ({ image }));
+  //   }
+  // };
+
+  sendUserData = (e) => {
+    e.preventDefault();
+    let uniqueId = Math.round(Math.random() * 10000);
+    firebase.database().ref('/' + uniqueId).set({
+      username: this.state.username,
+      email: this.state.email,
+      goal: this.state.goal,
+      bio: this.state.bio
+    })
+      .catch(e => console.log('error sending user data'))
+      .then((e) => {
+        this.setState({ profileFormSuccess: true });
+      });
+  }
 
   // handleUpload = () => {
   //   const { image } = this.state;
@@ -47,9 +63,10 @@ class ProfileForm extends React.Component {
   render() {
     return (
       <div className='profile-form-container' >
-        {this.state.profileFormSuccess && <Redirect to='/Home ' />}
+        {this.state.profileFormSuccess && <Redirect to='/Home' />}
         <h2>Edit your profile</h2>
-        <form onSubmit={() => this.setState({ profileFormSuccess: true })}>
+        <form onSubmit={this.sendUserData}>
+          {/*TODO make it the same as the username entered previously*/}
           <label>
             username:
           </label>
