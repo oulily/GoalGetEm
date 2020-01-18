@@ -8,19 +8,42 @@ import Profile from './components/Profile';
 import ProfileForm from './components/ProfileForm';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Route exact path='/' component={SignIn} />
-        <Route path='/SignUp' component={SignUp} />
-        <Route path='/Home' component={Home} />
-        <Route path='/Forum' component={Forum} />
-        <Route path='/Profile' component={Profile} />
-        <Route path='/ProfileForm' component={ProfileForm} />
-      </Router>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user_id: '',
+      username: '',
+      email: ''
+    };
+  }
+
+  setUserID = (id) => {
+    this.setState({ user_id: id });
+  }
+
+  setUsername = (name) => {
+    this.setState({ username: name });
+  }
+
+  setEmail = (email) => {
+    this.setState({ email: email });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <Route exact path='/' component={SignIn} />
+          <Route path='/SignUp' render={(props) => <SignUp {...props} setUserID={this.setUserID} setUsername={this.setUsername} setEmail={this.setEmail} />} />
+          <Route path='/ProfileForm' render={(props) => <ProfileForm {...props} userID={this.state.user_id} username={this.state.username} email={this.state.email} />} />
+          <Route path='/Home' render={(props) => <Home {...props} />} />
+          <Route path='/Forum' render={(props) => <Forum {...props} />} />
+          <Route path='/Profile' render={(props) => <Profile {...props} />} />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
