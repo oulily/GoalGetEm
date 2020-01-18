@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'firebase';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
+import '../styles/SignIn.scss';
 
 class SignIn extends React.Component {
     constructor(props) {
@@ -30,13 +31,14 @@ class SignIn extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='sign-in-container'>
                 {this.state.signInSuccess && <Redirect to='/Home' />}
-                <h1>Sign in.</h1>
+                <h1>WomxnHacks Project 2020</h1>
                 <form onSubmit={this.signIn}>
                     <label>
                         email:
                     </label>
+                    <br />
                     <input
                         required
                         type='email'
@@ -48,6 +50,7 @@ class SignIn extends React.Component {
                     <label>
                         password:
                     </label>
+                    <br />
                     <input
                         required
                         type='password'
@@ -58,6 +61,11 @@ class SignIn extends React.Component {
                     <button type='submit'>
                         Sign in
                     </button>
+                    <h3>New user? &nbsp;
+                        <Link to='/SignUp'>
+                            Sign up!
+                        </Link>
+                    </h3>
                 </form>
             </div>
         );

@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'firebase';
 import { Redirect, Link } from 'react-router-dom';
+import '../styles/SignUp.scss';
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -33,11 +34,12 @@ class SignUp extends React.Component {
         return (
             <div className='sign-up-container'>
                 {this.state.signUpSuccess && <Redirect to='/Home' />}
-                <h1>Make an account</h1>
+                <h2>First, let's create an account!</h2>
                 <form onSubmit={this.signUp}>
                     <label>
                         username:
                     </label>
+                    <br />
                     <input
                         required
                         type='text'
@@ -49,6 +51,7 @@ class SignUp extends React.Component {
                     <label>
                         email:
                     </label>
+                    <br />
                     <input
                         required
                         type='email'
@@ -60,6 +63,7 @@ class SignUp extends React.Component {
                     <label>
                         password:
                     </label>
+                    <br />
                     <input
                         required
                         type='password'
@@ -70,13 +74,12 @@ class SignUp extends React.Component {
                     <button type='submit'>
                         Sign up
                     </button>
+                    <h3>Already have an account? &nbsp;
+                        <Link to='/'>
+                            Sign in!
+                        </Link>
+                    </h3>
                 </form>
-                <h3>Already have an account?
-                    <Link to='/SignIn'>
-                        Sign in!
-                    </Link>
-
-                </h3>
             </div>
         );
     }

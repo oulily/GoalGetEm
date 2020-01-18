@@ -1,0 +1,15 @@
+@import './common.scss';
+
+button {
+    background-color: white;
+}
+
+.nav-bar-container {
+    height: 100px;
+    width: 100vw;
+    border-bottom: 2px solid $dark;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

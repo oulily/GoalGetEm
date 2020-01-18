@@ -1,0 +1,49 @@
+$primary: #d0ada7;
+$accent: #ad6a6c;
+$dark: #5d2e46;
+
+input {
+    font-size: 20px;
+    margin: 10px 0;
+    padding-bottom: 5px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid $accent;
+    color: white;
+
+    &:focus-within,
+    :focus {
+        outline: none;
+        border-bottom: 2px solid $dark;
+    }
+}
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: $accent;
+    background-color: $accent;
+
+    &:hover {
+        background-color: $dark;
+        color: white;
+    }
+}
+
+h3 {
+    color: white;
+}
+
+a {
+    color: $accent;
+    text-decoration: none;
+
+    &.current-page {
+        color: $dark;
+    }
+
+    &:hover {
+        color: $dark;
+    }
+}
