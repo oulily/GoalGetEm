@@ -9,7 +9,9 @@ class Profile extends React.Component {
                 <NavBar
                     currentPage='profile'
                 />
-                <h1>Profile</h1>
+                
+                       
+                    
             </div>
         );
     }
