@@ -9,6 +9,7 @@ class Profile extends React.Component {
                 <NavBar
                     currentPage='profile'
                 />
+<<<<<<< HEAD
                 <h1>Profile</h1>
                 <form onSubmit={this.signIn}>
                     <label>
@@ -59,6 +60,11 @@ class Profile extends React.Component {
                         onChange= {e => this.setState({ interest: e.target.value})}
                     />
                 </form>
+=======
+                
+                       
+                    
+>>>>>>> brianna
             </div>
         );
     }
