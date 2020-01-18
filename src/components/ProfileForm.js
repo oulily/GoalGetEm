@@ -126,6 +126,13 @@ class ProfileForm extends React.Component {
             goal:
           </label>
           <br />
+           <button class="dropbtn">Dropdown</button>
+                        <div class="dropdown-content">
+                            <a href="#">Exercise</a>
+                            <a href="#">Socializing</a>
+                            <a href="#">School</a>
+                        </div>
+                        <br/>
           <input
             required
             type='goal'
