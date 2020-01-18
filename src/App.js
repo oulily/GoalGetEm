@@ -5,6 +5,7 @@ import SignUp from './components/SignUp';
 import Home from './components/Home';
 import Forum from './components/Forum';
 import Profile from './components/Profile';
+import ProfileForm from './components/ProfileForm';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/Home' component={Home} />
         <Route path='/Forum' component={Forum} />
         <Route path='/Profile' component={Profile} />
+        <Route path='/ProfileForm' component={ProfileForm} />
       </Router>
     </div>
   );

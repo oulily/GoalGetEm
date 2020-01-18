@@ -33,8 +33,8 @@ class SignUp extends React.Component {
     render() {
         return (
             <div className='sign-up-container'>
-                {this.state.signUpSuccess && <Redirect to='/Home' />}
-                <h2>First, let's create an account!</h2>
+                {this.state.signUpSuccess && <Redirect to='/ProfileForm' />}
+                <h2>First, create an account!</h2>
                 <form onSubmit={this.signUp}>
                     <label>
                         username:
