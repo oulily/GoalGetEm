@@ -9,12 +9,12 @@ const hobbies = [
         goals: [
             'Hit the gym 3 times a week',
             'Stretch every morning',
-            'Try out yoga'
+            'Go to a yoga class'
         ],
         people: ['', '', '']
     },
     {
-        label: 'Improve diet',
+        label: 'Healthy Diet',
         goals: [
             'Eat less processed food',
             'Drink a cup of water before every meal',
@@ -25,19 +25,19 @@ const hobbies = [
     {
         label: 'Reading',
         goals: [
-            'Read a new book every month'
+            'Read for 30 minutes everyday'
         ],
         people: ['', '']
     },
     {
         label: 'Sudoku',
         goals: [
-            'Do 30 minutes of Sudoku puzzles a day'
+            'Do 30 minutes of Sudoku puzzles every day'
         ],
         people: ['', '', '', '']
     },
     {
-        label: 'Improving relationships',
+        label: 'Relationships',
         goals: [
             'Reach out to a friend',
             'Send a text of appreciation to a friend'
@@ -45,24 +45,24 @@ const hobbies = [
         people: ['', '', '', '']
     },
     {
-        label: 'Meet new people',
+        label: 'Socialization',
         goals: [
-            'Go to a social event this week',
+            'Go to a social event',
             'Say hi to a random person',
             'Ask someone how their day is'
         ],
         people: ['', '', '']
     },
     {
-        label: 'Improve grades',
+        label: 'Academics',
         goals: [
             'Set aside a certain amount of time for studying',
-            'Form good study habits'
+            'Go to office hours'
         ],
         people: ['', '', '', '', '', '', '']
     },
     {
-        label: 'Better mental health',
+        label: 'Mental Health',
         goals: [
             'Say a positive affirmation each day',
             'Allow yourself an hour of relaxation',
@@ -71,12 +71,20 @@ const hobbies = [
         people: ['', '', '']
     },
     {
-        label: 'Reduce stress',
+        label: 'Stress Relief',
         goals: [
             'Take frequent breaks when working',
-            'Get more sleep'
+            'Get at least 7 hours of sleep every day'
         ],
         people: ['', '', '', '', '']
+    },
+    {
+        label: 'Eco-Friendly',
+        goals: [
+            'Bring resusable bags to the grocery store',
+            'Say no to plastic straws'
+        ],
+        people: ['', '', '', '', '', '', '', '']
     }
 ];
 

@@ -37,7 +37,8 @@ class SignUp extends React.Component {
         return (
             <div className='sign-up-container'>
                 {this.state.signUpSuccess && <Redirect to='/ProfileForm' />}
-                <h2>First, create an account!</h2>
+                <h2>Create an Account</h2>
+                <br />
                 <form onSubmit={this.signUp}>
                     <label>
                         Username:
@@ -51,6 +52,7 @@ class SignUp extends React.Component {
                         onChange={e => this.setState({ username: e.target.value })}
                     />
                     <br />
+                    <br />
                     <label>
                         Email:
                     </label>
@@ -63,6 +65,7 @@ class SignUp extends React.Component {
                         onChange={e => this.setState({ email: e.target.value })}
                     />
                     <br />
+                    <br />
                     <label>
                         Password:
                     </label>
@@ -74,9 +77,11 @@ class SignUp extends React.Component {
                         onChange={e => this.setState({ password: e.target.value })}
                     />
                     <br />
+                    <br />
                     <button type='submit'>
                         Sign up
                     </button>
+                    <br />
                     <h3>Already have an account? &nbsp;
                         <Link to='/'>
                             Sign in!

@@ -34,6 +34,7 @@ class SignIn extends React.Component {
             <div className='sign-in-container'>
                 {this.state.signInSuccess && <Redirect to='/Home' />}
                 <h1>GoalGetEm!</h1>
+                <br />
                 <form onSubmit={this.signIn}>
                     <label>
                         Email:
@@ -47,6 +48,7 @@ class SignIn extends React.Component {
                         onChange={e => this.setState({ email: e.target.value })}
                     />
                     <br />
+                    <br />
                     <label>
                         Password:
                     </label>
@@ -58,9 +60,11 @@ class SignIn extends React.Component {
                         onChange={e => this.setState({ password: e.target.value })}
                     />
                     <br />
+                    <br />
                     <button type='submit'>
                         Sign in
                     </button>
+                    <br />
                     <h3>New user? &nbsp;
                         <Link to='/SignUp'>
                             Sign up!

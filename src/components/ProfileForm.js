@@ -42,13 +42,6 @@ class ProfileForm extends React.Component {
       });
   }
 
-  /*  updateImage = (e) => {
-      e.preventDefault();
-      firebase.storage().ref(`images/${image.name}`).put(image);
-
-    }
-  */
-
   handleUpload = (e) => {
     e.preventDefault();
     const uploadTask = firebase.storage().ref('/' + this.state.image.name).put(this.state.image);
@@ -77,9 +70,9 @@ class ProfileForm extends React.Component {
     return (
       <div className='profile-form-container' >
         {this.state.profileFormSuccess && <Redirect to='/Home' />}
-        <h2>Edit your profile</h2>
+        <h2>Edit Profile</h2>
+        <br />
         <form onSubmit={this.sendUserData}>
-          {/*TODO make it the same as the username entered previously*/}
           <label>
             Username:
           </label>
@@ -91,6 +84,7 @@ class ProfileForm extends React.Component {
             value={this.props.username}
           // onChange={e => this.setState({ username: e.target.value })}
           />
+          <br />
           <br />
           <label>
             Email:
@@ -104,7 +98,7 @@ class ProfileForm extends React.Component {
           // onChange={e => this.setState({ email: e.target.value })}
           />
           <br />
-
+          <br />
           <label>
             Upload Profile Picture
           </label>
@@ -126,7 +120,7 @@ class ProfileForm extends React.Component {
           <img
             src={this.state.url || "https://via.placeholder.com/400x300"}
             alt="Uploaded Images"
-            height="300"
+            height="400"
             width="400"
           />
           <br />
@@ -134,10 +128,18 @@ class ProfileForm extends React.Component {
           <label>
             Goal:
             <br />
+            <br />
             <select value={this.state.value} onChange={e => this.setState({ goal: e.target.value })}>
               <option value="Exercise">Exercise</option>
-              <option value="Socializing">Socializing</option>
-              <option value="School">School</option>
+              <option value="Healthy Diet">Healthy Diet</option>
+              <option value="Reading">Reading</option>
+              <option value="Sudoku">Sudoku</option>
+              <option value="Relationships">Relationships</option>
+              <option value="Socialization">Socialization</option>
+              <option value="Adademics">Adademics</option>
+              <option value="Mental Health">Mental Health</option>
+              <option value="Stress Relief">Stress Relief</option>
+              <option value="Eco-Friendly">Eco-Friendly</option>
             </select>
           </label>
           <br />
@@ -152,6 +154,7 @@ class ProfileForm extends React.Component {
             placeholder=''
             onChange={e => this.setState({ bio: e.target.value })}
           />
+          <br />
           <br />
           <button type='submit'>
             Save changes

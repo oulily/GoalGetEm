@@ -23,31 +23,37 @@ class Profile extends React.Component {
                 />
                 {this.state.ProfileSuccess && <Redirect to='/ProfileForm' />}
                 <div className='profile-container'>
-                    <h1>My Profile</h1>
+                    <h2>My Profile</h2>
                     <form onSubmit={e => this.setState({ ProfileSuccess: true })}>
                         <br />
                         <div className='username'>
-                            <h2> Username: {this.props.username} </h2>
+                            <label> Username: {this.props.username} </label>
                         </div>
+                        <br />
+                        <br />
 
                         <div className='image'>
                             <img
                                 src={this.props.url || "https://via.placeholder.com/400x300"}
                                 alt="Uploaded Images"
-                                height="300"
+                                height="400"
                                 width="400"
                             />
                         </div>
+                        <br />
+                        <br />
 
                         <div className='goal'>
-                            <h2>Goal: {this.props.goal} </h2>
+                            <label> Goal: {this.props.goal} </label>
                         </div>
 
                         <br />
+                        <br />
 
                         <div className='bio'>
-                            <h2> Bio: {this.props.bio} </h2>
+                            <label> Bio: {this.props.bio} </label>
                         </div>
+                        <br />
                         <br />
 
                         <button type='submit'>
