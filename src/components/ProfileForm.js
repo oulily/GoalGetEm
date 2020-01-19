@@ -83,11 +83,11 @@ class ProfileForm extends React.Component {
           </label>
           <br />
           <input
-            disabled
+             disabled
             type='text'
             name='name'
             value={this.props.username}
-          // onChange={e => this.setState({ username: e.target.value })}
+            // onChange={e => this.setState({ username: e.target.value })}
           />
           <br />
           <label>

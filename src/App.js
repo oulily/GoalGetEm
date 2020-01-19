@@ -30,16 +30,28 @@ class App extends React.Component {
     this.setState({ email: email });
   }
 
+  setUrl = (url) => {
+    this.setState({ url: url });
+  }
+
+  setGoal = (goal) => {
+    this.setState({ goal: goal });
+  }
+  setBio = (bio) => {
+    this.setState({ bio: bio });
+  }
+
   render() {
     return (
       <div className="App">
         <Router>
           <Route exact path='/' component={SignIn} />
           <Route path='/SignUp' render={(props) => <SignUp {...props} setUserID={this.setUserID} setUsername={this.setUsername} setEmail={this.setEmail} />} />
-          <Route path='/ProfileForm' render={(props) => <ProfileForm {...props} userID={this.state.user_id} username={this.state.username} email={this.state.email} />} />
+          <Route path='/ProfileForm' render={(props) => <ProfileForm {...props} userID={this.state.user_id} username={this.state.username} email={this.state.email}
+            image={this.setImage} goal={this.setGoal} />} />
           <Route path='/Home' render={(props) => <Home {...props} />} />
           <Route path='/Forum' render={(props) => <Forum {...props} />} />
-          <Route path='/Profile' render={(props) => <Profile {...props} />} />
+          <Route path='/Profile' render={(props) => <Profile {...props} userID={this.state.user_id} username={this.state.username} email={this.state.email} image={this.state.url} goal={this.state.goal} />} />
         </Router>
       </div>
     );
