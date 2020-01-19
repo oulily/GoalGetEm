@@ -6,11 +6,16 @@
     background-color: $primary;
 }
 .messagebubble {
-    width: 100px;
-    background-color:  $accent;
+    background-color: $accent;
+    max-width: 200px;
     border-radius: 5px;
     font-size: 20px;
-
+    padding: 10px;
+    text-align: left;
+}
+.message-heart {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .chat-container {
     border: 2px solid white;
@@ -18,15 +23,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 5% 20%;
     padding: 50px;
 }
 .avocado {
     width: 40px;
     height: 40px;
     margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
 }
 .message-container {
     display: flex;
+    align-items: center;
     margin: 10px;
+}
+.message-spacer {
+    width: 200px;
 }

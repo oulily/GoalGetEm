@@ -60,7 +60,6 @@ class SignIn extends React.Component {
                     <br />
                     <button type='submit'>
                         Sign in
-                        <a href="Profile.js">Profile</a>
                     </button>
                     <h3>New user? &nbsp;
                         <Link to='/SignUp'>

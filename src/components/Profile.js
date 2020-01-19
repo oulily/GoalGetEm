@@ -9,32 +9,31 @@ class Profile extends React.Component {
                 <NavBar
                     currentPage='profile'
                 />
-<<<<<<< HEAD
                 <h1>Profile</h1>
                 <form onSubmit={this.signIn}>
                     <label>
-                       username
+                        username
                     </label>
-                    <br/>
+                    <br />
                     <input
                         required
                         type='username'
                         name='username'
-                        placeholder = 'janedoe'
-                        onChange={e => this.setState({email: e.target.value})}
-                        />
-                        <br/>
-                     <label>
+                        placeholder='janedoe'
+                        onChange={e => this.setState({ email: e.target.value })}
+                    />
+                    <br />
+                    <label>
                         password:
                     </label>
-                    <br/>
+                    <br />
                     <input
                         required
                         type='password'
                         name='password'
-                        onChange={e => this.setState({ password: e.target.value})}
+                        onChange={e => this.setState({ password: e.target.value })}
                     />
-                    <h2>Interests</h2> 
+                    <h2>Interests</h2>
                     {/*<div class="dropdown">
                         <button class="dropbtn">Dropdown</button>
                         <div class="dropdown-content">
@@ -43,28 +42,23 @@ class Profile extends React.Component {
                             <a href="#">School</a>
                         </div>
                         </div>*/}
-                        <br/>
-                        <input
-                                type='other'
-                                name='other'
-                                placeholder='Another goal'
-                                onChange={e => this.setState({ other: e.target.value })}
-                            />
+                    <br />
+                    <input
+                        type='other'
+                        name='other'
+                        placeholder='Another goal'
+                        onChange={e => this.setState({ other: e.target.value })}
+                    />
                     <h2>Bio</h2>
-                    <br/>
+                    <br />
                     <input
                         required
                         type='Bio'
                         name='Bio'
-                        placeholder = 'Brief description'
-                        onChange= {e => this.setState({ interest: e.target.value})}
+                        placeholder='Brief description'
+                        onChange={e => this.setState({ interest: e.target.value })}
                     />
                 </form>
-=======
-                
-                       
-                    
->>>>>>> brianna
             </div>
         );
     }
