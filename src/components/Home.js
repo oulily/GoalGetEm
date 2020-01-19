@@ -9,6 +9,7 @@ const hobbies = [
         goals: [
             'Hit the gym 3 times a week',
             'Stretch every morning',
+            'Try out yoga'
         ],
         people: ['', '', '']
     },
@@ -16,7 +17,8 @@ const hobbies = [
         label: 'Improve diet',
         goals: [
             'Eat less processed food',
-            'Drink a cup of water before every meal'
+            'Drink a cup of water before every meal',
+            'Eat more fruits and vegetables'
         ],
         people: ['', '', '', '', '', '']
     },
@@ -55,6 +57,7 @@ const hobbies = [
         label: 'Improve grades',
         goals: [
             'Set aside a certain amount of time for studying',
+            'Form good study habits'
         ],
         people: ['', '', '', '', '', '', '']
     },
@@ -70,7 +73,8 @@ const hobbies = [
     {
         label: 'Reduce stress',
         goals: [
-            'Take frequent breaks when working'
+            'Take frequent breaks when working',
+            'Get more sleep'
         ],
         people: ['', '', '', '', '']
     }
