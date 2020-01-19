@@ -47,7 +47,7 @@ class Forum extends React.Component {
 
                         <div className='chat-container'>
                             <div className="message-container">
-                                <img className="profile-pic" src='https://cleananddelicious.com/wp-content/uploads/2016/03/Avocad0-CD.jpg' />
+                                <img className="profile-pic" src='https://cleananddelicious.com/wp-content/uploads/2016/03/Avocad0-CD.jpg' alt='profile-pic' />
                                 <div className='messagebubble'>
                                     hello person! how are you doing today?
                     </div>
@@ -69,10 +69,10 @@ class Forum extends React.Component {
                                 <div className='messagebubble'>
                                     im doing well. how about you? lets get that bread today. jk no more carbs haha
                             </div>
-                                <img className="profile-pic" src='https://www.outtherecolorado.com/wp-content/uploads/2017/03/e9bb2a136a67b3aa4f28fa89ff2e9e1f-1024x897.jpg' />
+                                <img className="profile-pic" src='https://www.outtherecolorado.com/wp-content/uploads/2017/03/e9bb2a136a67b3aa4f28fa89ff2e9e1f-1024x897.jpg' alt='profile-pic' />
                             </div>
                             <div className="message-container">
-                                <img className="profile-pic" src='https://cleananddelicious.com/wp-content/uploads/2016/03/Avocad0-CD.jpg' />
+                                <img className="profile-pic" src='https://cleananddelicious.com/wp-content/uploads/2016/03/Avocad0-CD.jpg' alt='profile-pic' />
                                 <div className='messagebubble'>
                                     yup. im okay. just been chilling and doing hw! wanna hit the gym l8ter?
                                 </div>
@@ -94,7 +94,7 @@ class Forum extends React.Component {
                                 <div className='messagebubble'>
                                     im down! see you soon... :)
                             </div>
-                                <img className="profile-pic" src='https://www.outtherecolorado.com/wp-content/uploads/2017/03/e9bb2a136a67b3aa4f28fa89ff2e9e1f-1024x897.jpg' />
+                                <img className="profile-pic" src='https://www.outtherecolorado.com/wp-content/uploads/2017/03/e9bb2a136a67b3aa4f28fa89ff2e9e1f-1024x897.jpg' alt='profile-pic' />
                             </div>
                             <div className='send-container'>
                                 <input

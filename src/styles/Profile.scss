@@ -2,15 +2,15 @@
 
 .profile-page {
     width: 100vw;
-    height: 200vh;
+    height: 100vh;
     background-color: $primary;
 }
 
 .profile-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-  align-items: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
 }
 
 // .username {

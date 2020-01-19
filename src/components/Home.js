@@ -95,7 +95,7 @@ class Home extends React.Component {
                     <section className='hobby-list'>
                         {hobbies.map((element, i) => {
                             return (
-                                <div className='hobby-card' onClick={() => this.setState({ selectedCard: element.label })}>
+                                <div className='hobby-card' key={i} onClick={() => this.setState({ selectedCard: element.label })}>
                                     {element.label}
                                 </div>
                             );
@@ -113,7 +113,7 @@ class Home extends React.Component {
                             {this.state.selectedCard ?
                                 hobbies.find((hobby, i) => hobby.label === this.state.selectedCard).goals.map((goalElement, i) => {
                                     return (
-                                        <li>{goalElement}</li>
+                                        <li key={i}>{goalElement}</li>
                                     );
                                 }) :
                                 <h2> Select a goal to learn more about it</h2>
@@ -126,7 +126,7 @@ class Home extends React.Component {
                             }
                             {this.state.selectedCard ?
                                 hobbies.find((hobby, i) => hobby.label === this.state.selectedCard).people.map((people, i) => {
-                                    return (<Person size='20px' color='#FFFFFF' />);
+                                    return (<Person key={i} size='20px' color='#FFFFFF' />);
                                 })
                                 : ''
 

@@ -35,6 +35,9 @@ class ProfileForm extends React.Component {
     })
       .catch(e => console.log('error sending user data'))
       .then((e) => {
+        this.props.setURL(this.state.url);
+        this.props.setGoal(this.state.goal);
+        this.props.setBio(this.state.bio);
         this.setState({ profileFormSuccess: true });
       });
   }
@@ -82,11 +85,11 @@ class ProfileForm extends React.Component {
           </label>
           <br />
           <input
-             disabled
+            disabled
             type='text'
             name='name'
             value={this.props.username}
-            // onChange={e => this.setState({ username: e.target.value })}
+          // onChange={e => this.setState({ username: e.target.value })}
           />
           <br />
           <label>
