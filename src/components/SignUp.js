@@ -17,6 +17,9 @@ class SignUp extends React.Component {
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
+                this.props.setUserID(user.uid);
+                this.props.setUsername(this.state.username);
+                this.props.setEmail(user.email);
                 this.setState({ signUpSuccess: true });
             }
         });

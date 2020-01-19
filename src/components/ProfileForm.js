@@ -27,10 +27,10 @@ class ProfileForm extends React.Component {
 
   sendUserData = (e) => {
     e.preventDefault();
-    let uniqueId = Math.round(Math.random() * 10000);
-    firebase.database().ref('/' + uniqueId).set({
-      username: this.state.username,
-      email: this.state.email,
+    // let uniqueId = Math.round(Math.random() * 10000);
+    firebase.database().ref('/' + this.props.userID).set({
+      username: this.props.username,
+      email: this.props.email,
       goal: this.state.goal,
       bio: this.state.bio
     })
@@ -83,11 +83,11 @@ class ProfileForm extends React.Component {
           </label>
           <br />
           <input
-            required
+            disabled
             type='text'
             name='name'
-            placeholder='Jane Doe'
-            onChange={e => this.setState({ username: e.target.value })}
+            value={this.props.username}
+          // onChange={e => this.setState({ username: e.target.value })}
           />
           <br />
           <label>
@@ -95,11 +95,11 @@ class ProfileForm extends React.Component {
           </label>
           <br />
           <input
-            required
+            disabled
             type='email'
             name='email'
-            placeholder='janedoe@email.com'
-            onChange={e => this.setState({ email: e.target.value })}
+            value={this.props.email}
+          // onChange={e => this.setState({ email: e.target.value })}
           />
           <br />
 
