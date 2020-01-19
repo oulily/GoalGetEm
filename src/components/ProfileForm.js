@@ -45,7 +45,7 @@ class ProfileForm extends React.Component {
   /*  updateImage = (e) => {
       e.preventDefault();
       firebase.storage().ref(`images/${image.name}`).put(image);
-  
+
     }
   */
 
@@ -105,18 +105,15 @@ class ProfileForm extends React.Component {
           />
           <br />
 
-          <h2>Profile Picture</h2>
-          <br />
-          <br />
+          <label>
+            Upload Profile Picture
+          </label>
           <br />
           <div className="file-field input-field">
             <div className="btn">
-              <span>File</span>
               <input type="file" onChange={this.handleChange} />
             </div>
-            <div className="file-path-wrapper">
-              <input className="file-path validate" type="text" />
-            </div>
+
           </div>
           <button
             onClick={this.handleUpload}
@@ -133,14 +130,6 @@ class ProfileForm extends React.Component {
             width="400"
           />
           <br />
-          {/* <button class="dropbtn">Dropdown</button>
-           <div class="dropdown-content">
-          //   <a href="#">Exercise</a>
-          //   <a href="#">Socializing</a>
-          //   <a href="#">School</a>
-          // </div>
-          <br/>
-          */}
           <br />
           <label>
             Goal:
@@ -152,15 +141,6 @@ class ProfileForm extends React.Component {
             </select>
           </label>
           <br />
-          {/*
-          <input
-            required
-            type='goal'
-            name='goal'
-            placeholder='goal'
-            onChange={e => this.setState({ goal: e.target.value })}
-          />
-          */}
           <br />
           <label>
             Bio:
@@ -169,7 +149,7 @@ class ProfileForm extends React.Component {
           <input
             type='bio'
             name='bio'
-            placeholder='bio'
+            placeholder=''
             onChange={e => this.setState({ bio: e.target.value })}
           />
           <br />
@@ -177,9 +157,6 @@ class ProfileForm extends React.Component {
             Save changes
           </button>
         </form>
-        <button onClick={() => console.log(this.state.image)}>
-          Print
-        </button>
       </div>
     );
   }

@@ -8,7 +8,7 @@ import { Send } from 'styled-icons/boxicons-regular/Send';
 const forumGroups = [
     'Exercise Pals',
     'Food Friends',
-    'Book Nerds',
+    'Book Worms',
     'Sudoku Enthusiasts',
     'Social Butterflies',
     'Mental Health Peers',

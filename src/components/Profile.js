@@ -23,7 +23,7 @@ class Profile extends React.Component {
                 />
                 {this.state.ProfileSuccess && <Redirect to='/ProfileForm' />}
                 <div className='profile-container'>
-                    <h1>Profile</h1>
+                    <h1>My Profile</h1>
                     <form onSubmit={e => this.setState({ ProfileSuccess: true })}>
                         <br />
                         <div className='username'>
