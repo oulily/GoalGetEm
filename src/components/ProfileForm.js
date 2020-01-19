@@ -2,7 +2,6 @@ import React from 'react';
 import firebase from 'firebase';
 import { Redirect } from 'react-router-dom';
 import '../styles/ProfileForm.scss';
-import storage from 'firebase';
 
 class ProfileForm extends React.Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class ProfileForm extends React.Component {
   handleChange = e => {
     if (e.target.files[0]) {
       const image = e.target.files[0];
-      this.setState({image : image });
+      this.setState({ image: image });
     }
   };
 
@@ -40,12 +39,12 @@ class ProfileForm extends React.Component {
       });
   }
 
-/*  updateImage = (e) => {
-    e.preventDefault();
-    firebase.storage().ref(`images/${image.name}`).put(image);
-
-  }
-*/
+  /*  updateImage = (e) => {
+      e.preventDefault();
+      firebase.storage().ref(`images/${image.name}`).put(image);
+  
+    }
+  */
 
   handleUpload = (e) => {
     e.preventDefault();

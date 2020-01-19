@@ -5,14 +5,14 @@ import '../styles/Profile.scss';
 
 class Profile extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {
-        email: '',
-        password: '',
-        other: '',
-        interest: '',
-        ProfileSuccess: false
-      }
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            other: '',
+            interest: '',
+            ProfileSuccess: false
+        }
     }
 
     render() {
@@ -21,9 +21,9 @@ class Profile extends React.Component {
                 <NavBar
                     currentPage='profile'
                 />
-                {this.state.ProfileSuccess && <Redirect to='/ProfileForm'/>}
-                <div className='profile-container'>
-                <h1>My Profile</h1>
+                {this.state.ProfileSuccess && <Redirect to='/ProfileForm' />}
+                <div className = 'profile-container'>
+                <h1>Profile</h1>
                 <form onSubmit={e => this.setState({ ProfileSuccess: true })}>
                     <br />
                     <div className = 'username'>
@@ -51,9 +51,10 @@ class Profile extends React.Component {
                     <br/>
 
                     <button type='submit'>
-                      Edit Profile
+                        Edit Profile
                     </button>
                     </form>
+                    </div>
                 </div>
             </div>
         );
