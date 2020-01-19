@@ -36,7 +36,7 @@ class SignIn extends React.Component {
                 <h1>WomxnHacks Project 2020</h1>
                 <form onSubmit={this.signIn}>
                     <label>
-                        email:
+                        Email:
                     </label>
                     <br />
                     <input
@@ -48,7 +48,7 @@ class SignIn extends React.Component {
                     />
                     <br />
                     <label>
-                        password:
+                        Password:
                     </label>
                     <br />
                     <input

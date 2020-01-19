@@ -37,7 +37,7 @@ class SignUp extends React.Component {
                 <h2>First, create an account!</h2>
                 <form onSubmit={this.signUp}>
                     <label>
-                        username:
+                        Username:
                     </label>
                     <br />
                     <input
@@ -49,7 +49,7 @@ class SignUp extends React.Component {
                     />
                     <br />
                     <label>
-                        email:
+                        Email:
                     </label>
                     <br />
                     <input
@@ -61,7 +61,7 @@ class SignUp extends React.Component {
                     />
                     <br />
                     <label>
-                        password:
+                        Password:
                     </label>
                     <br />
                     <input

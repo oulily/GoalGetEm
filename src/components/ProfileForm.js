@@ -2,26 +2,28 @@ import React from 'react';
 import firebase from 'firebase';
 import { Redirect } from 'react-router-dom';
 import '../styles/ProfileForm.scss';
+import storage from 'firebase';
 
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: '',
+      email: '',
       image: null,
       url: '',
-      username: '',
       goal: '',
       bio: '',
       profileFormSuccess: false
     }
   }
 
-  // handleChange = e => {
-  //   if (e.target.files[0]) {
-  //     const image = e.target.files[0];
-  //     this.setState(() => ({ image }));
-  //   }
-  // };
+  handleChange = e => {
+    if (e.target.files[0]) {
+      const image = e.target.files[0];
+      this.setState({image : image });
+    }
+  };
 
   sendUserData = (e) => {
     e.preventDefault();
@@ -38,27 +40,36 @@ class ProfileForm extends React.Component {
       });
   }
 
-  // handleUpload = () => {
-  //   const { image } = this.state;
-  //   const uploadTask = storage.ref(`images/${image.name}`).put(image);
-  //   uploadTask.on(
-  //     "state_changed",
-  //     error => {
-  //       // Error function ...
-  //       console.log(error);
-  //     },
-  //     () => {
-  //       // complete function ...
-  //       storage
-  //         .ref("images")
-  //         .child(image.name)
-  //         .getDownloadURL()
-  //         .then(url => {
-  //           this.setState({ url });
-  //         });
-  //     }
-  //   );
-  // };
+/*  updateImage = (e) => {
+    e.preventDefault();
+    firebase.storage().ref(`images/${image.name}`).put(image);
+
+  }
+*/
+
+  handleUpload = () => {
+    const { image } = this.state.image;
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      null,
+      null,
+      error => {
+        // Error function ...
+        console.log(error);
+      },
+      () => {
+        // complete function ...
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then(url => {
+            this.setState({ url });
+          });
+      }
+    );
+  };
+
 
   render() {
     return (
@@ -68,7 +79,7 @@ class ProfileForm extends React.Component {
         <form onSubmit={this.sendUserData}>
           {/*TODO make it the same as the username entered previously*/}
           <label>
-            username:
+            Username:
           </label>
           <br />
           <input
@@ -80,7 +91,7 @@ class ProfileForm extends React.Component {
           />
           <br />
           <label>
-            email:
+            Email:
           </label>
           <br />
           <input
@@ -91,48 +102,55 @@ class ProfileForm extends React.Component {
             onChange={e => this.setState({ email: e.target.value })}
           />
           <br />
-          {/* <div className="center">
-            <br />
-            <h2 className="green-text">React Firebase Image Uploader</h2>
-            <br />
-            <br />
-            <br />
-            <div className="file-field input-field">
-              <div className="btn">
-                <span>File</span>
-                <input type="file" onChange={this.handleChange} />
-              </div>
-              <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" />
-              </div>
+
+          <h2>Profile Picture</h2>
+          <br />
+          <br />
+          <br />
+          <div className="file-field input-field">
+            <div className="btn">
+              <span>File</span>
+              <input type="file" onChange={this.handleChange} />
             </div>
-            <button
-              onClick={this.handleUpload}
-              className="waves-effect waves-light btn"
-            >
-              Upload
+            <div className="file-path-wrapper">
+              <input className="file-path validate" type="text" />
+            </div>
+          </div>
+          <button
+            onClick={this.handleUpload}
+            className="waves-effect waves-light btn"
+          >
+            Upload
           </button>
-            <br />
-            <br />
-            <img
-              src={this.state.url || "https://via.placeholder.com/400x300"}
-              alt="Uploaded Images"
-              height="300"
-              width="400"
-            />
-          </div> */}
+          <br />
+          <br />
+          <img
+            src={this.state.url || "https://via.placeholder.com/400x300"}
+            alt="Uploaded Images"
+            height="300"
+            width="400"
+          />
+          <br />
+          {/* <button class="dropbtn">Dropdown</button>
+           <div class="dropdown-content">
+          //   <a href="#">Exercise</a>
+          //   <a href="#">Socializing</a>
+          //   <a href="#">School</a>
+          // </div>
+          <br/>
+          */}
           <br />
           <label>
-            goal:
+            Goal:
+            <br />
+            <select value={this.state.value} onChange={e => this.setState({ goal: e.target.value })}>
+              <option value="Exercise">Exercise</option>
+              <option value="Socializing">Socializing</option>
+              <option value="School">School</option>
+            </select>
           </label>
           <br />
-           <button class="dropbtn">Dropdown</button>
-                        <div class="dropdown-content">
-                            <a href="#">Exercise</a>
-                            <a href="#">Socializing</a>
-                            <a href="#">School</a>
-                        </div>
-                        <br/>
+          {/*
           <input
             required
             type='goal'
@@ -140,9 +158,10 @@ class ProfileForm extends React.Component {
             placeholder='goal'
             onChange={e => this.setState({ goal: e.target.value })}
           />
+          */}
           <br />
           <label>
-            bio:
+            Bio:
           </label>
           <br />
           <input
