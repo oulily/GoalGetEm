@@ -100,7 +100,7 @@ class ProfileForm extends React.Component {
           <br />
           <br />
           <label>
-            Upload Profile Picture
+            Profile Picture
           </label>
           <br />
           <div className="file-field input-field">

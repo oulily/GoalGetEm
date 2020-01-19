@@ -96,6 +96,8 @@ class Forum extends React.Component {
                             </div>
                                 <img className="profile-pic" src='https://www.outtherecolorado.com/wp-content/uploads/2017/03/e9bb2a136a67b3aa4f28fa89ff2e9e1f-1024x897.jpg' alt='profile-pic' />
                             </div>
+                            <br />
+                            <br />
                             <div className='send-container'>
                                 <input
                                     required
@@ -104,6 +106,7 @@ class Forum extends React.Component {
                                 />
                                 <Send size='20px' color='#FFFFFF' />
                             </div>
+                            <br />
                         </div>
                     </div>
 

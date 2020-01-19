@@ -125,7 +125,7 @@ class Home extends React.Component {
                             {this.state.selectedCard ?
                                 hobbies.find((hobby, i) => hobby.label === this.state.selectedCard).goals.map((goalElement, i) => {
                                     return (
-                                        <li key={i}>{goalElement}</li>
+                                        <li className = 'list-item' key={i}>{goalElement}</li>
                                     );
                                 }) :
                                 <h2> Select a goal to learn more about it</h2>

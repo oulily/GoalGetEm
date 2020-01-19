@@ -26,13 +26,13 @@ class Profile extends React.Component {
                     <h2>My Profile</h2>
                     <form onSubmit={e => this.setState({ ProfileSuccess: true })}>
                         <br />
-                        <div className='username'>
+                        <div className='heading'>
                             <label> Username: {this.props.username} </label>
                         </div>
                         <br />
                         <br />
 
-                        <div className='image'>
+                        <div>
                             <img
                                 src={this.props.url || "https://via.placeholder.com/400x300"}
                                 alt="Uploaded Images"
@@ -43,14 +43,14 @@ class Profile extends React.Component {
                         <br />
                         <br />
 
-                        <div className='goal'>
+                        <div className='heading'>
                             <label> Goal: {this.props.goal} </label>
                         </div>
 
                         <br />
                         <br />
 
-                        <div className='bio'>
+                        <div className='heading'>
                             <label> Bio: {this.props.bio} </label>
                         </div>
                         <br />
