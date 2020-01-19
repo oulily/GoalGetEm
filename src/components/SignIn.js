@@ -33,7 +33,7 @@ class SignIn extends React.Component {
         return (
             <div className='sign-in-container'>
                 {this.state.signInSuccess && <Redirect to='/Home' />}
-                <h1>WomxnHacks Project 2020</h1>
+                <h1>GoalGetEm!</h1>
                 <form onSubmit={this.signIn}>
                     <label>
                         Email:
