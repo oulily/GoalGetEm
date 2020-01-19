@@ -47,7 +47,6 @@ class Profile extends React.Component {
                         onChange={e => this.setState({ password: e.target.value })}
                     />
                     <h2>Interests</h2>
-<<<<<<< HEAD
                         <br/>
                         <input
                           type='other'
@@ -55,7 +54,6 @@ class Profile extends React.Component {
                           placeholder='Another goal'
                           onChange={e => this.setState({ other: e.target.value })}
                         />
-=======
                     {/*<div class="dropdown">
                         <button class="dropbtn">Dropdown</button>
                         <div class="dropdown-content">
@@ -71,7 +69,6 @@ class Profile extends React.Component {
                         placeholder='Another goal'
                         onChange={e => this.setState({ other: e.target.value })}
                     />
->>>>>>> d82af5730ada8b1fada11b3f3ad2a25c33b947d3
                     <h2>Bio</h2>
                     <br />
                     <input

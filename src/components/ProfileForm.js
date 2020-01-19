@@ -47,11 +47,11 @@ class ProfileForm extends React.Component {
   }
 */
 
-  handleUpload = () => {
-    const { image } = this.state.image;
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+  handleUpload = (e) => {
+    e.preventDefault();
+    const uploadTask = firebase.storage().ref('/' + this.state.image.name).put(this.state.image);
     uploadTask.on(
-      null,
+      'state_changed',
       null,
       error => {
         // Error function ...
@@ -59,9 +59,9 @@ class ProfileForm extends React.Component {
       },
       () => {
         // complete function ...
-        storage
-          .ref("images")
-          .child(image.name)
+        firebase.storage()
+          .ref('/')
+          .child(this.state.image.name)
           .getDownloadURL()
           .then(url => {
             this.setState({ url });
@@ -175,6 +175,9 @@ class ProfileForm extends React.Component {
             Save changes
           </button>
         </form>
+        <button onClick={() => console.log(this.state.image)}>
+          Print
+        </button>
       </div>
     );
   }
