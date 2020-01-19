@@ -2,7 +2,6 @@ import React from 'react';
 import firebase from 'firebase';
 import { Redirect } from 'react-router-dom';
 import '../styles/ProfileForm.scss';
-import storage from 'firebase';
 
 class ProfileForm extends React.Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class ProfileForm extends React.Component {
   handleChange = e => {
     if (e.target.files[0]) {
       const image = e.target.files[0];
-      this.setState({image : image });
+      this.setState({ image: image });
     }
   };
 
@@ -40,18 +39,18 @@ class ProfileForm extends React.Component {
       });
   }
 
-/*  updateImage = (e) => {
+  /*  updateImage = (e) => {
+      e.preventDefault();
+      firebase.storage().ref(`images/${image.name}`).put(image);
+  
+    }
+  */
+
+  handleUpload = (e) => {
     e.preventDefault();
-    firebase.storage().ref(`images/${image.name}`).put(image);
-
-  }
-*/
-
-  handleUpload = () => {
-    const { image } = this.state.image;
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    const uploadTask = firebase.storage().ref('/' + this.state.image.name).put(this.state.image);
     uploadTask.on(
-      null,
+      'state_changed',
       null,
       error => {
         // Error function ...
@@ -59,9 +58,9 @@ class ProfileForm extends React.Component {
       },
       () => {
         // complete function ...
-        storage
-          .ref("images")
-          .child(image.name)
+        firebase.storage()
+          .ref('/')
+          .child(this.state.image.name)
           .getDownloadURL()
           .then(url => {
             this.setState({ url });
@@ -175,6 +174,9 @@ class ProfileForm extends React.Component {
             Save changes
           </button>
         </form>
+        <button onClick={() => console.log(this.state.image)}>
+          Print
+        </button>
       </div>
     );
   }
